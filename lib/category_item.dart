@@ -7,10 +7,12 @@ import 'package:meals_app/category_meals_screen.dart';
 class CategoryItem extends StatelessWidget {
   //const CategortItem({super.key});
 
+  final String id;
+
   final String title;
   final Color color;
 
-  const CategoryItem(this.title, this.color);
+  const CategoryItem(this.id, this.title, this.color);
 
   //page switch on button press
 
@@ -18,7 +20,7 @@ class CategoryItem extends StatelessWidget {
     Navigator.of(contextCateg).push(
       MaterialPageRoute(
         builder: (_) {
-          return CategoryMealsScreen();
+          return CategoryMealsScreen(id, title);
         },
       ),
     );
