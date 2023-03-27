@@ -15,8 +15,8 @@ const dummyCategories = [
   ),
   Category(
     id: 'c3',
-    title: 'Hamburgers',
-    color: Colors.orange,
+    title: 'Ugali',
+    color: Colors.grey,
   ),
   Category(
     id: 'c4',
@@ -36,7 +36,7 @@ const dummyCategories = [
   Category(
     id: 'c7',
     title: 'Eggs',
-    color: Colors.lightBlue,
+    color: Colors.yellow,
   ),
   Category(
     id: 'c8',
