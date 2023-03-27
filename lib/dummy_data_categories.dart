@@ -11,7 +11,7 @@ const dummyCategories = [
   Category(
     id: 'c2',
     title: 'Beef Stew',
-    color: Colors.red,
+    color: Colors.brown,
   ),
   Category(
     id: 'c3',
@@ -30,18 +30,18 @@ const dummyCategories = [
   ),
   Category(
     id: 'c6',
-    title: 'Sukuma',
+    title: 'Sukuma na Spinach',
     color: Colors.green,
   ),
   Category(
     id: 'c7',
-    title: 'Eggs',
+    title: 'Omelette',
     color: Colors.yellow,
   ),
   Category(
     id: 'c8',
-    title: 'Spinach Stew',
-    color: Colors.lightGreen,
+    title: 'Kuku Fry',
+    color: Colors.redAccent,
   ),
   Category(
     id: 'c9',
