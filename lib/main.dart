@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'MealsRecipEZZ',
+      title: 'MealsRecipes',
       theme: ThemeData(
           primarySwatch: Colors.red,
           accentColor: Colors.amber,
@@ -21,8 +21,10 @@ class MyApp extends StatelessWidget {
           fontFamily: 'Raleway',
           textTheme: ThemeData.light().textTheme.copyWith(
               bodyLarge: TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
-              titleMedium:
-                  TextStyle(fontSize: 24, fontFamily: 'RobotoCondensed'))),
+              titleMedium: TextStyle(
+                  fontSize: 20,
+                  fontFamily: 'RobotoCondensed',
+                  fontWeight: FontWeight.bold))),
       home: const CategoriesScreen(),
     );
   }
