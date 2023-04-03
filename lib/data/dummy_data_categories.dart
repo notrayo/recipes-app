@@ -36,7 +36,7 @@ const dummyCategories = [
   ),
   Category(
     id: 'c7',
-    title: 'Omelette',
+    title: 'Kachumbari',
     color: Colors.yellow,
   ),
   Category(
@@ -63,9 +63,9 @@ const dummyMeals = [
     id: 'm1',
     categories: [
       'c1',
-      'c2',
+      'c7',
     ],
-    title: 'Spaghetti with Tomato Sauce',
+    title: 'Githeri smat',
     affordability: Affordability.cheap,
     complexity: Complexity.simple,
     imageUrl:
@@ -73,20 +73,19 @@ const dummyMeals = [
     duration: 20,
     ingredients: [
       '4 Tomatoes',
-      '1 Tablespoon of Olive Oil',
-      '1 Onion',
-      '250g Spaghetti',
-      'Spices',
-      'Cheese (optional)'
+      '1 Tablespoon of salt',
+      '2 onions'
+          '1 avocado',
+      '2 danias'
+          '3 cups of beans and maize'
+          'ka firifiri'
     ],
     steps: [
       'Cut the tomatoes and the onion into small pieces.',
       'Boil some water - add salt to it once it boils.',
-      'Put the spaghetti into the boiling water - they should be done in about 10 to 12 minutes.',
-      'In the meantime, heaten up some olive oil and add the cut onion.',
-      'After 2 minutes, add the tomato pieces, salt, pepper and your other spices.',
-      'The sauce will be done once the spaghetti are.',
-      'Feel free to add some cheese on top of the finished dish.'
+      'Put the beans and maize into the boiling water - they should be done in about 10 to 12 minutes.',
+      'In the meantime, chapa ka kachumbary by mixing tomatoes, onions, ovacado na dania.',
+      'once ready, mix and serve'
     ],
     //isGlutenFree: false,
     isVegan: true,
@@ -95,26 +94,28 @@ const dummyMeals = [
   ),
   Meal(
     id: 'm2',
-    categories: ['c3', 'c4'],
-    title: 'filler',
+    categories: ['c2', 'c3', 'c7'],
+    title: 'Ugali na beef stew',
     affordability: Affordability.expe,
     complexity: Complexity.mid,
     imageUrl:
         'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg/800px-Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg',
     duration: 20,
     ingredients: [
-      '4 filler',
-      '1 filler',
-      '1 filler',
+      '1/2 KG ya beef',
+      '1 kg of unga ya uali',
+      'nyanya, vitungu, pilipili',
+      'mafuta'
     ],
     steps: [
-      'Cut the tomatoes and the onion into small pieces.',
-      'Boil some water - add salt to it once it boils.',
-      'Put the spaghetti into the boiling water - they should be done in about 10 to 12 minutes.',
-      'In the meantime, heaten up some olive oil and add the cut onion.',
+      'Boil maji ya ugali and prepare when ready.',
+      'Boil nyama hadi maji iishe.',
+      'Add mafuta and fry the meat',
+      'In the meantime, cut up onions and pilipili and add kwa nyama.',
       'After 2 minutes, add the tomato pieces, salt, pepper and your other spices.',
-      'The sauce will be done once the spaghetti are.',
-      'Feel free to add some cheese on top of the finished dish.'
+      'Once ready, eka low heat and let the beef simmer',
+      'ongeza ka kachu'
+          'Serve na uenjoy.'
     ],
     //isGlutenFree: false,
     isVegan: false,
