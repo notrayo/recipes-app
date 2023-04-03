@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import './models/category.dart';
-import './models/meals.dart';
+import '../models/category.dart';
+import '../models/meals.dart';
 
 const dummyCategories = [
   Category(
@@ -99,7 +99,7 @@ const dummyMeals = [
     affordability: Affordability.expe,
     complexity: Complexity.mid,
     imageUrl:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg/800px-Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg',
+        'http://amaizefoods.com/images/lunch-recipes/amaize-pap-squares-cream-spinach-lg.jpg',
     duration: 20,
     ingredients: [
       '1/2 KG ya beef',
@@ -114,8 +114,8 @@ const dummyMeals = [
       'In the meantime, cut up onions and pilipili and add kwa nyama.',
       'After 2 minutes, add the tomato pieces, salt, pepper and your other spices.',
       'Once ready, eka low heat and let the beef simmer',
-      'ongeza ka kachu'
-          'Serve na uenjoy.'
+      'ongeza ka kachu',
+      'Serve na uenjoy.'
     ],
     //isGlutenFree: false,
     isVegan: false,
