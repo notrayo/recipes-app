@@ -28,33 +28,14 @@ class MyApp extends StatelessWidget {
                   fontFamily: 'RobotoCondensed',
                   fontWeight: FontWeight.bold))),
       home: const CategoriesScreen(),
-      routes: {'/categories-meals': (contextCateg) => CategoryMealsScreen()},
+      //initial route
+
+      //initialRoute: '/',
+
+      routes: {
+        //'/': (context) => CategoriesScreen(),
+        CategoryMealsScreen.routeName: (contextCateg) => CategoryMealsScreen()
+      },
     );
   }
 }
-
-// class MyHomePage extends StatefulWidget {
-//   //const MyHomePage({super.key, required this.title});
-//   const MyHomePage({super.key});
-
-//   @override
-//   State<MyHomePage> createState() => _MyHomePageState();
-// }
-
-// class _MyHomePageState extends State<MyHomePage> {
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         // Here we take the value from the MyHomePage object that was created by
-//         // the App.build method, and use it to set our appbar title.
-//         title:const Text('Rayo Mealz'),
-//       ),
-//       body: const Center(
-
-//         child: Text('Navigating...')
-//       ),
-//     );
-//   }
-// }
