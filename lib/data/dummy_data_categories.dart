@@ -69,7 +69,7 @@ const dummyMeals = [
     affordability: Affordability.cheap,
     complexity: Complexity.simple,
     imageUrl:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg/800px-Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_SL8P-rRETERL2Bbp1s0IActBGmkQjGl9tg&usqp=CAU',
     duration: 20,
     ingredients: [
       '4 Tomatoes',
@@ -116,6 +116,60 @@ const dummyMeals = [
       'Once ready, eka low heat and let the beef simmer',
       'ongeza ka kachu',
       'Serve na uenjoy.'
+    ],
+    //isGlutenFree: false,
+    isVegan: false,
+  ),
+  Meal(
+    id: 'm3',
+    categories: ['c3', 'c6'],
+    title: 'Ugali sukuma',
+    affordability: Affordability.cheap,
+    complexity: Complexity.simple,
+    imageUrl:
+        'https://i0.wp.com/www.k24tv.co.ke/wp-content/uploads/2021/10/Ugali-mboga.jpg?resize=768%2C432&ssl=1',
+    duration: 20,
+    ingredients: [
+      '10 leaves of sukuma and spinach',
+      '1 kg of unga ya uali',
+      'nyanya, vitungu, pilipili',
+      'mafuta'
+    ],
+    steps: [
+      'Boil maji ya ugali and prepare when ready.',
+      'In the meantime, cut up onions and pilipili ',
+      'Prepare stew on the side.',
+      //'Add mafuta and fry the meat',
+
+      //'After 2 minutes, add the tomato pieces, salt, pepper and your other spices.',
+      'Once ready, eka low heat and let the stew simmer',
+      //'ongeza ka kachu',
+      'Serve na uenjoy.'
+    ],
+    //isGlutenFree: false,
+    isVegan: true,
+  ),
+  Meal(
+    id: 'm4',
+    categories: ['c4', 'c8'],
+    title: 'Chips and Kuku',
+    affordability: Affordability.expe,
+    complexity: Complexity.difficult,
+    imageUrl:
+        'https://media.istockphoto.com/id/824623884/photo/grilled-chicken-legs-with-chips-and-vegetables.jpg?s=612x612&w=is&k=20&c=-TU9HpEmlvrmeIvMSoryh304nEaF7yQPCnPkURH-IRQ=',
+    duration: 90,
+    ingredients: [
+      '1/2 Kg of Chicken',
+      'Potatoes(better when cut into chips)',
+      'nyanya, vitungu, pilipili',
+      'mafuta'
+    ],
+    steps: [
+      'fry the cut up potatoes until chips is ready and close',
+      'boil the chicken',
+      'once ready, fry the chicken and add the tomatoes',
+      'let it simmer',
+      'serve the chips and kuku...better with stew'
     ],
     //isGlutenFree: false,
     isVegan: false,
