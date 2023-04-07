@@ -20,7 +20,51 @@ class MealItem extends StatelessWidget {
       required this.affordability,
       required this.complexity});
 
+  // complexity enum definition
+
+  String get complexityText {
+    switch (complexity) {
+      case Complexity.simple:
+        {
+          return 'Simple';
+        }
+      case Complexity.mid:
+        {
+          return 'Mid';
+        }
+      case Complexity.difficult:
+        {
+          return 'Tricky';
+        }
+      default:
+        return 'Unknown';
+    }
+  }
+
+  // affordability enum def
+
+  String get affordabilityText {
+    switch (affordability) {
+      case Affordability.cheap:
+        {
+          return 'cheap';
+        }
+      case Affordability.beiSawa:
+        {
+          return 'bei sawa';
+        }
+      case Affordability.expe:
+        {
+          return 'expe';
+        }
+      default:
+        return 'Unknown';
+    }
+  }
+
   void selectMeal() {}
+
+  //enum translation
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +91,52 @@ class MealItem extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
+                //add title, difficulty on top of the image widgets
+                Positioned(
+                  bottom: 20,
+                  left: 10,
+                  child: Container(
+                    width: 320,
+                    color: Colors.black54,
+                    padding: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+                    child: Text(
+                      title,
+                      style: TextStyle(fontSize: 20, color: Colors.white),
+                      softWrap: true,
+                      overflow: TextOverflow.fade,
+                    ),
+                  ),
+                )
               ],
+            ),
+            //add row that will give info below the image
+            Padding(
+              padding: EdgeInsets.all(20),
+              child: Row(
+                children: <Widget>[
+                  //Icon(Icons.local_dining_outlined),
+                  //SizedBox(
+                  //width: 4,
+                  //),
+                  Text(title),
+                  SizedBox(
+                    width: 4,
+                  ),
+                  Icon(Icons.schedule_outlined),
+                  SizedBox(
+                    width: 4,
+                  ),
+                  Text('$duration min'),
+                  SizedBox(width: 6),
+                  Icon(Icons.construction),
+                  SizedBox(width: 4),
+                  Text(complexityText),
+                  SizedBox(width: 4),
+                  Icon(Icons.price_check),
+                  SizedBox(width: 4),
+                  Text(affordabilityText)
+                ],
+              ),
             )
           ],
         ),
