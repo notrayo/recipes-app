@@ -15,7 +15,10 @@ class _TabsScreenState extends State<TabsScreen> {
 
   //pages to show
 
-  final List<Widget> _pages = [CategoriesScreen(), FavsScreen()];
+  final List<Map<String, Object>> _pages = [
+    {'page': CategoriesScreen(), 'title': 'Categories'},
+    {'page': FavsScreen(), 'title': 'Favourites'}
+  ];
 
   int _selectedPageIndex = 0;
 
@@ -28,11 +31,14 @@ class _TabsScreenState extends State<TabsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      /*appBar: AppBar(
-        title: Text('Meals App'),
-      ),*/
-      body: _pages[_selectedPageIndex],
+      appBar: AppBar(
+        title: Text(_pages[_selectedPageIndex]['title'] as String? ?? ''),
+      ),
+      body: _pages[_selectedPageIndex]['page'] as Widget?,
+      //drawer
+      drawer: Drawer(child: Text('testing drawer widget...')),
       bottomNavigationBar: BottomNavigationBar(
+        //type: BottomNavigationBarType.shifting,
         onTap: _selectPage,
         items: const [
           BottomNavigationBarItem(
@@ -40,6 +46,9 @@ class _TabsScreenState extends State<TabsScreen> {
           BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Favs'),
         ],
         backgroundColor: Theme.of(context).primaryColor,
+        unselectedItemColor: Colors.white70,
+        selectedItemColor: Theme.of(context).colorScheme.secondary,
+        currentIndex: _selectedPageIndex,
       ),
     );
   }
