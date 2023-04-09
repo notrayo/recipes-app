@@ -74,11 +74,11 @@ const dummyMeals = [
     ingredients: [
       '4 Tomatoes',
       '1 Tablespoon of salt',
-      '2 onions'
-          '1 avocado',
-      '2 danias'
-          '3 cups of beans and maize'
-          'ka firifiri'
+      '2 onions',
+      '1 avocado',
+      '2 danias',
+      '3 cups of beans and maize',
+      'ka firifiri'
     ],
     steps: [
       'Cut the tomatoes and the onion into small pieces.',

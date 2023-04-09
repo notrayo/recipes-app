@@ -15,7 +15,7 @@ class MealItem extends StatelessWidget {
   final Affordability affordability;
 
   //constructor
-  MealItem(
+  const MealItem(
       {required this.id,
       required this.title,
       required this.imageUrl,
