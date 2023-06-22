@@ -77,10 +77,11 @@ class MealItem extends StatelessWidget {
     return InkWell(
       onTap: () => selectMeal(context),
       child: Card(
+        elevation: 5,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
         ),
-        elevation: 4,
+        //elevation: 4,
         margin: EdgeInsets.all(10),
         child: Column(
           children: <Widget>[
@@ -120,26 +121,27 @@ class MealItem extends StatelessWidget {
               padding: EdgeInsets.all(20),
               child: Row(
                 children: <Widget>[
-                  //Icon(Icons.local_dining_outlined),
-                  //SizedBox(
-                  //width: 4,
-                  //),
-                  Text(title),
-                  SizedBox(width: 4),
-                  Icon(Icons.schedule_outlined),
-                  SizedBox(width: 4),
-                  Text('$duration min'),
-                  SizedBox(width: 6),
-                  Icon(Icons.construction),
-                  SizedBox(width: 4),
-                  Text(complexityText),
-                  SizedBox(width: 4),
-                  Icon(Icons.price_check),
-                  SizedBox(width: 4),
-                  Text(affordabilityText)
+                  Expanded(
+                    child: Row(
+                      children: <Widget>[
+                        // ...
+                        Icon(Icons.schedule_outlined),
+                        SizedBox(width: 4),
+                        Text('$duration min'),
+                        SizedBox(width: 6),
+                        Icon(Icons.construction),
+                        SizedBox(width: 4),
+                        Text(complexityText),
+                        SizedBox(width: 4),
+                        Icon(Icons.price_check),
+                        SizedBox(width: 4),
+                        Text(affordabilityText),
+                      ],
+                    ),
+                  ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
