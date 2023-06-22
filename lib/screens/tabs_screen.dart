@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import './categories_screen.dart';
 import './favs_screen.dart';
+import './drawer.dart';
 
 class TabsScreen extends StatefulWidget {
   //const TabsScreen({super.key});
@@ -28,6 +29,14 @@ class _TabsScreenState extends State<TabsScreen> {
     });
   }
 
+  void _selectScreenFromDrawer(String identifier) {
+    if (identifier == 'Favourites') {
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => const FavsScreen(),
+      ));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +45,7 @@ class _TabsScreenState extends State<TabsScreen> {
       ),
       body: _pages[_selectedPageIndex]['page'] as Widget?,
       //drawer
-      drawer: Drawer(child: Text('testing drawer widget...')),
+      drawer: DrawerScreen(onSelectScreenFromDrawer: _selectScreenFromDrawer),
       bottomNavigationBar: BottomNavigationBar(
         //type: BottomNavigationBarType.shifting,
         onTap: _selectPage,
