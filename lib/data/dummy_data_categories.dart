@@ -5,54 +5,34 @@ import '../models/meals.dart';
 
 const dummyCategories = [
   Category(
-    id: 'c1',
-    title: 'Githeri',
-    color: Colors.purple,
-  ),
-  Category(
-    id: 'c2',
-    title: 'Beef Stew',
-    color: Colors.brown,
-  ),
-  Category(
-    id: 'c3',
-    title: 'Ugali',
-    color: Colors.grey,
-  ),
-  Category(
-    id: 'c4',
-    title: 'Chipo',
-    color: Colors.amber,
-  ),
-  Category(
-    id: 'c5',
-    title: 'Chapati',
-    color: Colors.blue,
-  ),
-  Category(
-    id: 'c6',
-    title: 'Sukuma na Spinach',
-    color: Colors.green,
+    id: 'c9',
+    title: 'Breakfast',
+    color: Color.fromARGB(255, 54, 30, 233),
   ),
   Category(
     id: 'c7',
-    title: 'Kachumbari',
-    color: Colors.yellow,
+    title: 'Nyama',
+    color: Color.fromARGB(255, 135, 6, 6),
   ),
   Category(
-    id: 'c8',
-    title: 'Kuku Fry',
-    color: Colors.redAccent,
+    id: 'c6',
+    title: 'Greens',
+    color: Colors.green,
   ),
   Category(
-    id: 'c9',
-    title: 'Uji',
-    color: Colors.pink,
+    id: 'c2',
+    title: 'Rice / Ugali',
+    color: Colors.brown,
   ),
   Category(
-    id: 'c10',
-    title: 'Matumbo',
-    color: Colors.teal,
+    id: 'c4',
+    title: 'Fish and Chips',
+    color: Colors.amber,
+  ),
+  Category(
+    id: 'c1',
+    title: 'Githeri / Mukimo',
+    color: Colors.purple,
   ),
 ];
 
@@ -63,13 +43,11 @@ const dummyMeals = [
     id: 'm1',
     categories: [
       'c1',
-      'c7',
     ],
-    title: 'Githeri smat',
+    title: 'Githeri Special',
     affordability: Affordability.cheap,
     complexity: Complexity.simple,
-    imageUrl:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_SL8P-rRETERL2Bbp1s0IActBGmkQjGl9tg&usqp=CAU',
+    imageUrl: 'assets/images/githeri.jpeg',
     duration: 20,
     ingredients: [
       '4 Tomatoes',
@@ -94,12 +72,11 @@ const dummyMeals = [
   ),
   Meal(
     id: 'm2',
-    categories: ['c2', 'c3', 'c7'],
-    title: 'Ugali na beef stew',
+    categories: ['c2', 'c7'],
+    title: 'Ugali Beef',
     affordability: Affordability.expe,
     complexity: Complexity.mid,
-    imageUrl:
-        'http://amaizefoods.com/images/lunch-recipes/amaize-pap-squares-cream-spinach-lg.jpg',
+    imageUrl: 'assets/images/ugali_beef.jpeg',
     duration: 20,
     ingredients: [
       '1/2 KG ya beef',
@@ -122,16 +99,15 @@ const dummyMeals = [
   ),
   Meal(
     id: 'm3',
-    categories: ['c3', 'c6'],
+    categories: ['c2', 'c6'],
     title: 'Ugali sukuma',
     affordability: Affordability.cheap,
     complexity: Complexity.simple,
-    imageUrl:
-        'https://i0.wp.com/www.k24tv.co.ke/wp-content/uploads/2021/10/Ugali-mboga.jpg?resize=768%2C432&ssl=1',
+    imageUrl: 'assets/images/ugali sukuma.jpeg',
     duration: 20,
     ingredients: [
       '10 leaves of sukuma and spinach',
-      '1 kg of unga ya uali',
+      '1 kg of unga ya ugali',
       'nyanya, vitungu, pilipili',
       'mafuta'
     ],
@@ -151,12 +127,11 @@ const dummyMeals = [
   ),
   Meal(
     id: 'm4',
-    categories: ['c4', 'c8'],
+    categories: ['c4', 'c7'],
     title: 'Chips and Kuku',
     affordability: Affordability.expe,
     complexity: Complexity.difficult,
-    imageUrl:
-        'https://media.istockphoto.com/id/824623884/photo/grilled-chicken-legs-with-chips-and-vegetables.jpg?s=612x612&w=is&k=20&c=-TU9HpEmlvrmeIvMSoryh304nEaF7yQPCnPkURH-IRQ=',
+    imageUrl: 'assets/images/chipo kuku.jpeg',
     duration: 90,
     ingredients: [
       '1/2 Kg of Chicken',
@@ -173,5 +148,64 @@ const dummyMeals = [
     ],
     //isGlutenFree: false,
     isVegan: false,
+  ),
+  Meal(
+    id: 'm6',
+    categories: ['c9'],
+    title: 'Chai Mayai Boiro',
+    affordability: Affordability.beiSawa,
+    complexity: Complexity.simple,
+    imageUrl: 'assets/images/sliced-boiled-eggs-with-cup-of-tea-TYT9RT.jpg',
+    duration: 15,
+    ingredients: ['2/3 eggs', 'Water', 'Strungi (tea leaves)', 'Bread'],
+    steps: [
+      'Boil the eggs and ensure they hard',
+      'Prep tea',
+      'Prep bread',
+      'Serve'
+    ],
+    //isGlutenFree: false,
+    isVegan: false,
+  ),
+  Meal(
+    id: 'm7',
+    categories: ['c9'],
+    title: 'Chai Ndazi',
+    affordability: Affordability.beiSawa,
+    complexity: Complexity.simple,
+    imageUrl: 'assets/images/chai ndazi.jpeg',
+    duration: 20,
+    ingredients: [
+      'baking flour',
+      'Water',
+      'Strungi (tea leaves)',
+      'Cooking Oil'
+    ],
+    steps: [
+      'Bake / fry the baking flour hazi ziwe ndazi...idk how',
+      'Prep tea',
+      'Serve'
+    ],
+    //isGlutenFree: false,
+    isVegan: true,
+  ),
+  Meal(
+    id: 'm8',
+    categories: ['c1'],
+    title: 'Mukimo',
+    affordability: Affordability.beiSawa,
+    complexity: Complexity.mid,
+    imageUrl: 'assets/images/mukimo.jpeg',
+    duration: 80,
+    ingredients: [
+      'Potatoes',
+      'Water',
+      'Greens (dania kwanza)',
+      'Maize',
+      'Cooking Oil'
+    ],
+    steps: ['??', 'Serve'],
+    //isGlutenFree: false,
+    isVegan: true,
   ),
 ];
