@@ -65,10 +65,7 @@ const dummyMeals = [
       'In the meantime, chapa ka kachumbary by mixing tomatoes, onions, ovacado na dania.',
       'once ready, mix and serve'
     ],
-    //isGlutenFree: false,
     isVegan: true,
-    //isVegetarian: true,
-    //isLactoseFree: true,
   ),
   Meal(
     id: 'm2',
@@ -115,11 +112,7 @@ const dummyMeals = [
       'Boil maji ya ugali and prepare when ready.',
       'In the meantime, cut up onions and pilipili ',
       'Prepare stew on the side.',
-      //'Add mafuta and fry the meat',
-
-      //'After 2 minutes, add the tomato pieces, salt, pepper and your other spices.',
       'Once ready, eka low heat and let the stew simmer',
-      //'ongeza ka kachu',
       'Serve na uenjoy.'
     ],
     //isGlutenFree: false,
@@ -164,7 +157,6 @@ const dummyMeals = [
       'Prep bread',
       'Serve'
     ],
-    //isGlutenFree: false,
     isVegan: false,
   ),
   Meal(
