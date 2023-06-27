@@ -7,11 +7,13 @@ class FiltersScreen extends StatefulWidget {
   State<FiltersScreen> createState() => _FiltersScreenState();
 }
 
+enum Filter { vegan }
+
 class _FiltersScreenState extends State<FiltersScreen> {
 //price state
 
-  var _cheapPriceState = false;
-  var _simpleMealState = false;
+  //var _cheapPriceState = false;
+  //var _simpleMealState = false;
   var _veganState = false;
 
   @override
@@ -20,60 +22,66 @@ class _FiltersScreenState extends State<FiltersScreen> {
         appBar: AppBar(
           title: Text('Meal Filters ...'),
         ),
-        body: Column(
-          children: [
-            SizedBox(
-              height: 8,
-            ),
-            SwitchListTile(
-              value: _veganState,
-              onChanged: (isChanged) {
-                setState(() {
-                  _veganState = isChanged;
-                });
-              },
-              title: Text(
-                'Vegan',
-                //style: Theme.of(context).textTheme.bodyLarge!,
+        body: WillPopScope(
+          onWillPop: () async {
+            Navigator.of(context).pop({Filter.vegan: _veganState});
+            return false;
+          },
+          child: Column(
+            children: [
+              SizedBox(
+                height: 8,
               ),
-              subtitle: Text('only include meals without meat'),
-              secondary: const Icon(Icons.spa_outlined),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            SwitchListTile(
-              value: _cheapPriceState,
-              onChanged: (isChanged) {
-                setState(() {
-                  _cheapPriceState = isChanged;
-                });
-              },
-              title: Text(
-                'Price',
-                //style: Theme.of(context).textTheme.bodyLarge!,
+              SwitchListTile(
+                value: _veganState,
+                onChanged: (isChanged) {
+                  setState(() {
+                    _veganState = isChanged;
+                  });
+                },
+                title: Text(
+                  'Vegan',
+                  //style: Theme.of(context).textTheme.bodyLarge!,
+                ),
+                subtitle: Text('only include meals without meat'),
+                secondary: const Icon(Icons.spa_outlined),
               ),
-              subtitle: Text('only include cheap prices'),
-              secondary: const Icon(Icons.price_change_outlined),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            SwitchListTile(
-              value: _simpleMealState,
-              onChanged: (isChanged) {
-                setState(() {
-                  _simpleMealState = isChanged;
-                });
-              },
-              title: Text(
-                'Simplicity',
-                //style: Theme.of(context).textTheme.bodyLarge!,
+              SizedBox(
+                height: 20,
               ),
-              subtitle: Text('only include simple to cook meals'),
-              secondary: const Icon(Icons.lunch_dining_outlined),
-            )
-          ],
+              // SwitchListTile(
+              //   value: _cheapPriceState,
+              //   onChanged: (isChanged) {
+              //     setState(() {
+              //       _cheapPriceState = isChanged;
+              //     });
+              //   },
+              //   title: Text(
+              //     'Price',
+              //     //style: Theme.of(context).textTheme.bodyLarge!,
+              //   ),
+              //   subtitle: Text('only include cheap prices'),
+              //   secondary: const Icon(Icons.price_change_outlined),
+              // ),
+              // SizedBox(
+              //   height: 20,
+              // ),
+              // SwitchListTile(
+              //   value: _simpleMealState,
+              //   onChanged: (isChanged) {
+              //     setState(() {
+              //       _simpleMealState = isChanged;
+              //     });
+              //   },
+              //   title: Text(
+              //     'Simplicity',
+              //     //style: Theme.of(context).textTheme.bodyLarge!,
+              //   ),
+              //   subtitle: Text('only include simple to cook meals'),
+              //   secondary: const Icon(Icons.lunch_dining_outlined),
+              // )
+            ],
+          ),
         ));
   }
 }

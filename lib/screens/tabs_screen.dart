@@ -4,6 +4,9 @@ import './categories_screen.dart';
 import './favs_screen.dart';
 import './drawer.dart';
 import './filters_screen.dart';
+import '../data/dummy_data_categories.dart';
+
+const InitialFilters = {Filter.vegan: false};
 
 class TabsScreen extends StatefulWidget {
   //const TabsScreen({super.key});
@@ -18,7 +21,12 @@ class _TabsScreenState extends State<TabsScreen> {
   //pages to show
 
   final List<Map<String, Object>> _pages = [
-    {'page': CategoriesScreen(), 'title': 'Categories'},
+    {
+      'page': CategoriesScreen(
+        toogledMeals: [],
+      ),
+      'title': 'Categories'
+    },
     {'page': FavsScreen(), 'title': 'Favourites'}
   ];
 
@@ -30,14 +38,22 @@ class _TabsScreenState extends State<TabsScreen> {
     });
   }
 
-  void _selectScreenFromDrawer(String identifier) {
+  //storing the toogled filters
+  Map<Filter, bool> _toogledFilters = InitialFilters;
+
+  void _selectScreenFromDrawer(String identifier) async {
     //added pop function to close the drawer after a page has been navigated to..
     Navigator.of(context).pop();
     if (identifier == 'Filters') {
       // Navigator.of(context).pop();
-      Navigator.of(context).push(MaterialPageRoute(
+      //pushing results of the filter on the main tabs page
+      final result =
+          await Navigator.of(context).push<Map<Filter, bool>>(MaterialPageRoute(
         builder: (context) => const FiltersScreen(),
       ));
+      setState(() {
+        _toogledFilters = result ?? InitialFilters;
+      });
     } else {
       Navigator.of(context).pop();
     }
@@ -45,6 +61,13 @@ class _TabsScreenState extends State<TabsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final availableMeals = dummyMeals.where((meal) {
+      if (_toogledFilters[Filter.vegan]! && !meal.isVegan) {
+        return false;
+      }
+      return true;
+    }).toList();
+
     return Scaffold(
       appBar: AppBar(
         title: Text(_pages[_selectedPageIndex]['title'] as String? ?? ''),

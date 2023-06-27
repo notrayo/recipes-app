@@ -3,9 +3,12 @@
 import 'package:flutter/material.dart';
 import '../data/dummy_data_categories.dart';
 import '../widgets/category_item.dart';
+import '../models/meals.dart';
 
 class CategoriesScreen extends StatelessWidget {
-  const CategoriesScreen({super.key});
+  const CategoriesScreen({super.key, required this.toogledMeals});
+
+  final List<Meal> toogledMeals;
 
   @override
   Widget build(BuildContext context) {
