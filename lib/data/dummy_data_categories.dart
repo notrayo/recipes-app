@@ -61,7 +61,7 @@ const dummyMeals = [
     steps: [
       'Cut the tomatoes and the onion into small pieces.',
       'Boil some water - add salt to it once it boils.',
-      'Put the beans and maize into the boiling water - they should be done in about 10 to 12 minutes.',
+      'Put the beans and maize into the boiling water',
       'In the meantime, chapa ka kachumbary by mixing tomatoes, onions, ovacado na dania.',
       'once ready, mix and serve'
     ],

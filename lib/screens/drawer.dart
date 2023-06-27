@@ -32,14 +32,37 @@ class DrawerScreen extends StatelessWidget {
                   ),
                 ],
               )),
+          // ListTile(
+          //   leading: const Icon(
+          //     Icons.star,
+          //     size: 30,
+          //     color: Colors.black,
+          //   ),
+          //   title: Text(
+          //     'Favourites',
+          //     style: Theme.of(context)
+          //         .textTheme
+          //         .titleMedium!
+          //         .copyWith(color: Colors.black),
+          //   ),
+          //   onTap: () {
+          //     //control state
+
+          //     //close drawer
+          //     onSelectScreenFromDrawer('Favourites');
+          //   },
+          // ),
+          // SizedBox(
+          //   height: 15,
+          // ),
           ListTile(
             leading: const Icon(
-              Icons.star,
+              Icons.filter_alt,
               size: 30,
               color: Colors.black,
             ),
             title: Text(
-              'Favourites',
+              'Filters',
               style: Theme.of(context)
                   .textTheme
                   .titleMedium!
@@ -49,7 +72,7 @@ class DrawerScreen extends StatelessWidget {
               //control state
 
               //close drawer
-              onSelectScreenFromDrawer('Favourites');
+              onSelectScreenFromDrawer('Filters');
             },
           ),
         ],

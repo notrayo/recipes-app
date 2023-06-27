@@ -6,9 +6,9 @@ class FavsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      /*appBar: AppBar(
-        title: Text('favs page'),
-      ),*/
+      // /*appBar: AppBar(
+      //   title: Text('favs page'),
+      // ),*/
       body: Center(
         child: Text('favs will be rendered here'),
       ),

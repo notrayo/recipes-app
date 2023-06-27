@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import './categories_screen.dart';
 import './favs_screen.dart';
 import './drawer.dart';
+import './filters_screen.dart';
 
 class TabsScreen extends StatefulWidget {
   //const TabsScreen({super.key});
@@ -30,10 +31,15 @@ class _TabsScreenState extends State<TabsScreen> {
   }
 
   void _selectScreenFromDrawer(String identifier) {
-    if (identifier == 'Favourites') {
+    //added pop function to close the drawer after a page has been navigated to..
+    Navigator.of(context).pop();
+    if (identifier == 'Filters') {
+      // Navigator.of(context).pop();
       Navigator.of(context).push(MaterialPageRoute(
-        builder: (context) => const FavsScreen(),
+        builder: (context) => const FiltersScreen(),
       ));
+    } else {
+      Navigator.of(context).pop();
     }
   }
 
