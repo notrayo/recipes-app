@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../models/meals.dart';
 import './categories_screen.dart';
 import './favs_screen.dart';
 import './drawer.dart';
@@ -56,6 +57,19 @@ class _TabsScreenState extends State<TabsScreen> {
       });
     } else {
       Navigator.of(context).pop();
+    }
+  }
+
+  //favourites state mgmt
+  final List<Meal> _favouriteMeals = [];
+
+  void _toggleFavMeals(Meal meal) {
+    final isExisting = _favouriteMeals.contains(meal);
+
+    if (isExisting) {
+      _favouriteMeals.remove(meal);
+    } else {
+      _favouriteMeals.add(meal);
     }
   }
 

@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:meals_app/provider/meal_favs_provider.dart';
+import 'package:provider/provider.dart';
 
 import '../data/dummy_data_categories.dart';
+import '../models/meals.dart';
+import '../provider/meal_favs_provider.dart';
 
 class MealDetailsScreen extends StatefulWidget {
-  //const MealDetailsScreen({super.key});
+  const MealDetailsScreen({super.key});
 
   static const routeName = '/meal-detail';
 
@@ -12,18 +16,39 @@ class MealDetailsScreen extends StatefulWidget {
 }
 
 class _MealDetailsScreenState extends State<MealDetailsScreen> {
+  // late void Function(Meal meal) onToggleFavourite;
+
   @override
   Widget build(BuildContext context) {
     final mealID = ModalRoute.of(context)!.settings.arguments as String;
     // define id for correct image and info selection
     final selectedMeal = dummyMeals.firstWhere((meal) => meal.id == mealID);
+    //favourites provider
+
+    final mealProvider = Provider.of<MealProvider>(context);
+    final isFavourite = mealProvider.isMealFavourite(selectedMeal);
+
     return Scaffold(
       appBar: AppBar(
         title: Text(selectedMeal.title),
+        actions: [
+          IconButton(
+              onPressed: () {
+                mealProvider.toogleFavourite(selectedMeal);
+              },
+              icon: Icon(
+                isFavourite ? Icons.star : Icons.star_border,
+                color: isFavourite ? Color.fromARGB(255, 255, 236, 22) : null,
+                size: 30,
+              ))
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
+            SizedBox(
+              height: 30,
+            ),
             Center(
               child: Container(
                 width: MediaQuery.of(context).size.width *
@@ -43,11 +68,15 @@ class _MealDetailsScreenState extends State<MealDetailsScreen> {
                   ],
                   color: const Color.fromARGB(255, 242, 242, 242),
                 ),
+                // SizedBox(height: 20,),
                 child: Image.asset(
                   selectedMeal.imageUrl, // Replace with the actual image path
                   fit: BoxFit.cover, // Adjust the fit as needed
                 ),
               ),
+            ),
+            SizedBox(
+              height: 20,
             ),
             // Ingredients widget
             Container(
@@ -87,16 +116,16 @@ class _MealDetailsScreenState extends State<MealDetailsScreen> {
             SizedBox(
               height: 10,
             ),
-            Container(
-              margin: EdgeInsets.symmetric(vertical: 15),
-              child: Text(
-                'Steps',
-                style: Theme.of(context).textTheme.titleMedium,
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
+            // Container(
+            //   margin: EdgeInsets.symmetric(vertical: 15),
+            //   child: Text(
+            //     'Steps',
+            //     style: Theme.of(context).textTheme.titleMedium,
+            //   ),
+            // ),
+            // SizedBox(
+            //   height: 10,
+            // ),
 
             // Container(
             //   decoration: BoxDecoration(
