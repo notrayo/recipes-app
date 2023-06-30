@@ -18,8 +18,19 @@ class FavsScreen extends StatelessWidget {
             itemCount: favouriteMeals.length,
             itemBuilder: (ctx, index) {
               final meal = favouriteMeals[index];
-              return ListTile(
-                title: Text(meal.title),
+              return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Card(
+                  elevation: 5,
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      backgroundImage: AssetImage(meal.imageUrl),
+                    ),
+                    title: Text(meal.title),
+                    subtitle: Text('Duration: ${meal.duration} minutes'),
+                    //trailing: Text('The meal is ${meal.affordability}'),
+                  ),
+                ),
               );
             }));
   }
