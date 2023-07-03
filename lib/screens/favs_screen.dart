@@ -28,6 +28,7 @@ class FavsScreen extends StatelessWidget {
                     ),
                     title: Text(meal.title),
                     subtitle: Text('Duration: ${meal.duration} minutes'),
+                    
                     //trailing: Text('The meal is ${meal.affordability}'),
                   ),
                 ),
